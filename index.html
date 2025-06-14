@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gaming Hub</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav {
+      background-color: #222;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+    }
+
+    .left-menu, .right-menu {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    nav a {
+      color: #fff9f9;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    header {
+      text-align: center;
+      padding: 40px 20px;
+      background-color: #f5f5f5;
+    }
+
+    .game-cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin: 20px;
+    }
+
+    .game-card {
+      width: 250px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      overflow: hidden;
+      background-color: #ffffff;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-align: center;
+      padding-bottom: 10px;
+    }
+
+    .game-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    }
+
+    .game-card img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+    }
+
+    .game-card h3 {
+      margin: 10px 0 5px;
+      font-size: 18px;
+      color: #222;
+    }
+
+    .game-card p {
+      font-size: 14px;
+      color: #555;
+      padding: 0 10px;
+    }
+
+    .download-button {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 8px 16px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .download-button:hover {
+      background-color: #0056b3;
+    }
+
+    h2 {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    h3.platform-title {
+      width: 100%;
+      text-align: center;
+      margin-top: 40px;
+      color: #333;
+    }
+
+    .search-box {
+      margin: 20px auto;
+      text-align: center;
+    }
+
+    .search-box input {
+      padding: 10px;
+      width: 250px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 16px;
+    }
+
+    #installMessage {
+      display: none;
+      position: fixed;
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #111;
+      color: #0f0;
+      padding: 40px 60px;
+      font-size: 24px;
+      font-weight: bold;
+      border-radius: 12px;
+      box-shadow: 0 0 25px rgba(0,255,0,0.7);
+      z-index: 9999;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="search-box">
+    <input type="text" id="searchInput" placeholder="Rechercher un produit..." onkeyup="searchProducts()">
+  </div>
+
+  <div id="installMessage">✅ سافي خوك دار خدمتو، دور تَقَوّد 💪</div>
+
+  <section id="featured">
+    <h2>ha homa lgames ila m3jbokch khrj t9wd</h2>
+
+    <h3 class="platform-title">Mobile Games</h3>
+    <div class="game-cards">
+      <div class="game-card product">
+        <img src="PHOTO/FIFA.jfif">
+        <h3>FIFA Mobile</h3>
+        <p>Play football on the go with official teams.</p>
+        <button class="download-button" onclick="downloadGame()">Download</button>
+      </div>
+      <div class="game-card product">
+        <img src="PHOTO/PES.jfif">
+        <h3>PES Mobile</h3>
+        <p>The popular football game is now on mobile!</p>
+        <button class="download-button" onclick="downloadGame()">Download</button>
+      </div>
+      <div class="game-card product">
+        <img src="PHOTO/among us.jfif">
+        <h3>Among Us</h3>
+        <p>Find the imposter in this mobile classic.</p>
+        <button class="download-button" onclick="downloadGame()">Download</button>
+      </div>
+      <div class="game-card product">
+        <img src="PHOTO/CLAHS.jfif">
+        <h3>Clash of Clans</h3>
+        <p>Build your base and fight enemies in this strategy game.</p>
+        <button class="download-button" onclick="downloadGame()">Download</button>
+      </div>
+    </div>
+
+    <h3 class="platform-title">PS5 Games</h3>
+    <div class="game-cards">
+      <div class="game-card product">
+        <img src="PHOTO/PES.jfif">
+        <h3>PES 2025</h3>
+        <p>Realistic football with next-gen graphics.</p>
+        <button class="download-button" onclick="downloadGame()">Download</button>
+      </div>
+      <div class="game-card product">
+        <img src="PHOTO/FIFA.jfif">
+        <h3>FC 25</h3>
+        <p>New era of football simulation from EA Sports.</p>
+        <button class="download-button" onclick="downloadGame()">Download</button>
+      </div>
+      <div class="game-card product">
+        <img src="PHOTO/among us.jfif">
+        <h3>Among Us</h3>
+        <p>Now available on PS5 with console features.</p>
+        <button class="download-button" onclick="downloadGame()">Download</button>
+      </div>
+      <div class="game-card product">
+        <img src="PHOTO/GTA.jfif">
+        <h3>GTA V</h3>
+        <p>Explore Los Santos in 4K resolution on PS5.</p>
+        <button class="download-button" onclick="downloadGame()">Download</button>
+      </div>
+      <div class="game-card product">
+        <img src="PHOTO/CALL.jfif">
+        <h3>Call of Duty</h3>
+        <p>Epic FPS combat on your powerful gaming PS5</p>
+        <button class="download-button" onclick="downloadGame()">Download</button>
+      </div>
+    </div>
+
+    <h3 class="platform-title">PC Games</h3>
+    <div class="game-cards">
+      <div class="game-card product">
+        <img src="PHOTO/PES.jfif">
+        <h3>PES 2025</h3>
+        <p>Football action with PC-level performance.</p>
+        <button class="download-button" onclick="downloadGame()">Download</button>
+      </div>
+      <div class="game-card product">
+        <img src="PHOTO/FIFA.jfif">
+        <h3>FC 25</h3>
+        <p>The latest EA Sports football experience on PC.</p>
+        <button class="download-button" onclick="downloadGame()">Download</button>
+      </div>
+      <div class="game-card product">
+        <img src="PHOTO/among us.jfif">
+        <h3>Among Us</h3>
+        <p>Multiplayer deception fun on PC.</p>
+        <button class="download-button" onclick="downloadGame()">Download</button>
+      </div>
+      <div class="game-card product">
+        <img src="PHOTO/GTA.jfif">
+        <h3>GTA V</h3>
+        <p>Classic open-world action with mods and high FPS.</p>
+        <button class="download-button" onclick="downloadGame()">Download</button>
+      </div>
+      <div class="game-card product">
+        <img src="PHOTO/CALL.jfif">
+        <h3>Call of Duty</h3>
+        <p>Epic FPS combat on your powerful gaming PC.</p>
+        <button class="download-button" onclick="downloadGame()">Download</button>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    function searchProducts() {
+      const input = document.getElementById('searchInput').value.toLowerCase();
+      const products = document.querySelectorAll('.product');
+
+      products.forEach(function(product) {
+        const title = product.querySelector('h3').textContent.toLowerCase();
+        product.style.display = title.includes(input) ? "block" : "none";
+      });
+    }
+
+    function downloadGame() {
+      const link = document.createElement('a');
+      link.href = 'photo/a.jpg';
+      link.download = 'game.jpg';
+      link.click();
+
+      const msg = document.getElementById('installMessage');
+      msg.style.display = 'block';
+      setTimeout(() => {
+        msg.style.display = 'none';
+      }, 5000);
+    }
+  </script>
+</body>
+</html>
